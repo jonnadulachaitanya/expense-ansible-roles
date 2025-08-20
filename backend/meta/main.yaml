@@ -1,0 +1,2 @@
+dependencies:
+- role: common # ansible will check this role and run accordingly based on role
