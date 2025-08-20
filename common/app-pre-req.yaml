@@ -4,7 +4,7 @@
     state: absent
     ignore_errors: true
 
-- name: create "{{ app_location }}" folder
+- name: create app directory
   ansible.builtin.file:
     name: "{{ app_location }}"
     state: directory
