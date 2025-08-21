@@ -10,7 +10,7 @@
     state: directory
 
 - name: extract the code
-  ansible.builtin.unarchive:
-    src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip #by default ansible thinks this is in ansible server.
+  ansible.builtin.unarchive: # it will directly download and save
+    src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip
     dest: "{{ app_location }}"
-    remote_src: yes #the file is already there in remote server so we are mentioning this.
+    remote_src: yes

@@ -19,4 +19,4 @@
     src: expense.conf.j2
     dest: /etc/nginx/default.d/expense.conf
   notify:
-    restart nginx
+    restart nginx  # it will call handlers
