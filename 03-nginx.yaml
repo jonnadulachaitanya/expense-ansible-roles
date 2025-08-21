@@ -1,0 +1,14 @@
+- name: nginx installation
+  hosts: all
+  become: yes # it will take root(sudo) access
+  tasks:
+  - name: Installing nginx
+    ansible.builtin.package: #Package: heterogeneous module that can work for all distors
+      name: nginx
+      state: present
+
+  - name: run the nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started
+      enabled: yes # it will enable nginx service
