@@ -10,6 +10,8 @@
     enabled: true
 
 - name: importing tasks from common roles
+  tags:
+  - deployment
   ansible.builtin.import_role: # we have writtened common roles for this remove,create folder and extract code to path.
     name: common
     tasks_from: app-pre-req
