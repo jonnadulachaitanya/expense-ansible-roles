@@ -2,5 +2,4 @@
   hosts: frontend
   become: yes
   roles:
-  - name: frontend
-    tags: frontend
+  - frontend

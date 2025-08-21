@@ -4,4 +4,4 @@
   vars_files: # we have created vault for password, we stored the details
   - /var/expense/credentials_mysql.yaml 
   roles:
-  - name: mysql
+  - mysql
