@@ -1,6 +1,8 @@
 - name: configuring backend server
   hosts: backend
   become: yes
+  vars_files: # we have created vault for password, we stored the details
+  - /var/expense/credentials_mysql.yaml # we have used same vault
   roles: 
   - backend
 
