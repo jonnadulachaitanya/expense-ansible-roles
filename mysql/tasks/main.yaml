@@ -16,7 +16,7 @@
 
 - name: connect mysql server
   community.mysql.mysql_info:
-    login_user: "{{ login_user }}"
+    login_user: root
     login_host: "{{ login_hostname }}"
     login_password:  "{{ mysql_root_password }}"
   ignore_errors: true
