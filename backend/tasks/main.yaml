@@ -18,7 +18,7 @@
     name: expense
 
 - name: import tasks from common roles
-  ansible.builtin.import_role:
+  ansible.builtin.import_role:  # we have writtened common roles for this remove,create folder and extract code to path.
     name: common
     tasks_from: app-pre-req
 

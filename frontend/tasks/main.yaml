@@ -1,0 +1,25 @@
+- name: install nginx server
+  ansible.builtin.package:
+    name: nginx
+    state: present
+
+- name: start nginx server
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: importing tasks from common roles
+  ansible.builtin.import_role: # we have writtened common roles for this remove,create folder and extract code to path.
+    name: common
+    tasks_from: app-pre-req
+
+- name: copy expense.conf file to remote
+  ansible.builtin.copy:
+    src: expense.conf
+    dest: /etc/nginx/default.d/expense.conf
+
+- name: restart nginx server
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
