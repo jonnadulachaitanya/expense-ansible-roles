@@ -1,6 +1,7 @@
 - name: nginx installation
   hosts: all
   become: yes # it will take root(sudo) access
+  serial: 3
   tasks:
   - name: Installing nginx
     ansible.builtin.package: #Package: heterogeneous module that can work for all distors
