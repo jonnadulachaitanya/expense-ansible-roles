@@ -18,11 +18,15 @@
     name: expense
 
 - name: import tasks from common roles
+  tags:
+  - deployment
   ansible.builtin.import_role:  # we have writtened common roles for this remove,create folder and extract code to path.
     name: common
     tasks_from: app-pre-req
 
 - name: install the dependencies
+  tags:
+  - deployment
   ansible.builtin.command: npm install # i need to run this command  where package.json is there.
   args:
     chdir: /app  #this will change the directory before running the command.
@@ -49,6 +53,8 @@
     state: import
 
 - name: daemon reload
+  tags:
+  - deployment
   ansible.builtin.systemd_service:
     daemon_reload: true
     state: restarted
